@@ -1,12 +1,15 @@
 data = load('data.txt');
 X = data(:, 1); y = data(:, 2);
 m = length(y);
+n = 1;
 
-X = [ones(m, 1), data(:,1)];
-theta = zeros(2, 1);
+X = [ones(m, 1), X];
+
+
+theta = zeros(n+1, 1);
 
 iterations = 1000;
-alpha = 0.01;
+alpha = 0.0001;
 
 J = computeCost(X, y, theta);
 
